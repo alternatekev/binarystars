@@ -23,13 +23,20 @@ const styles = style({
     alignItems: "baseline",
     marginTop: "80vh",
     fontSize: 24,
-    textShadow: "0 -1px #333 solid",
+    textShadow: "0 -1px 1px rgba(0, 0, 0, 0.25)",
+    backgroundAttachment: "fixed",
     color: "#FFF",
     padding: `3px 6px`,
     backgroundColor: "rgba(0, 0, 0, 0.25)",
+    boxShadow: `0 10px 25px rgba(0, 0, 0, 0.25)`,
   },
   Text: {
-    display: "inline-block",
+    display: "block",
+    letterSpacing: "-0.0555555em",
+    " p span": {
+      color: "rgba(255, 255, 255, 0.5)",
+      textShadow: "0 -1px 1px rgba(0, 0, 0, 0.25)",
+    },
   },
 });
 
@@ -40,6 +47,16 @@ const BinaryStarsPage = ({ content, featuredImage, title, excerpt }: Props) => (
       <meta property="og:title" content={title} />
       <meta property="og:description" content={stripHtml(excerpt).result} />
       <meta property="og:image" content={featuredImage} />
+      <meta
+        name="theme-color"
+        content="#83859C"
+        media="(prefers-color-scheme: light)"
+      />
+      <meta
+        name="theme-color"
+        content="#83859C"
+        media="(prefers-color-scheme: dark)"
+      />
     </Head>
     <Global
       styles={{
