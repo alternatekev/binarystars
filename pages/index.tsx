@@ -4,6 +4,7 @@ import Head from "next/head";
 import { css, Global } from "@emotion/core";
 import { Container } from "semantic-ui-react";
 import { style } from "@styles";
+import { stripHtml } from "string-strip-html";
 import { Flasher } from "@components";
 
 import { initializeApollo, HOME_QUERY } from "@data";
@@ -12,6 +13,7 @@ interface Props {
   title: string;
   content: string;
   wpUrl: string;
+  excerpt: string;
   featuredImage: string;
 }
 
@@ -31,10 +33,13 @@ const styles = style({
   },
 });
 
-const BinaryStarsPage = ({ content, featuredImage, title }: Props) => (
+const BinaryStarsPage = ({ content, featuredImage, title, excerpt }: Props) => (
   <div>
     <Head>
       <title>{title}</title>
+      <meta property="og:title" content={title} />
+      <meta property="og:description" content={stripHtml(excerpt).result} />
+      <meta property="og:image" content={featuredImage} />
     </Head>
     <Global
       styles={{
@@ -75,6 +80,7 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
       title: binarystars.data.page.title,
       content: binarystars.data.page.content,
       featuredImage: binarystars.data.page.featuredImage.node.sourceUrl,
+      excerpt: binarystars.data.page.excerpt,
       wpUrl: process.env.WP_URL || "",
     },
   };

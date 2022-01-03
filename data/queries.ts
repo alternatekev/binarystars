@@ -5,6 +5,7 @@ export const HOME_QUERY = gql`
     page(id: "5", idType: DATABASE_ID) {
       title
       content(format: RENDERED)
+      excerpt
       featuredImage {
         node {
           sourceUrl
