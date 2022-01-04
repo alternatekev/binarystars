@@ -623,6 +623,13 @@
   dependencies:
     "@types/react" "*"
 
+"@types/react-typing-effect@^2.0.2":
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/@types/react-typing-effect/-/react-typing-effect-2.0.2.tgz#11fbf831c53c97777d4881e6653ec4bd75106b39"
+  integrity sha512-RZO8XbfC007Z2f/PgFhqC40lCnn0QbkpOJLNM4xX8ZLMtM4fGU4vAfd8A2SjdNg/ncZgqxdk7KIyZma2reObAA==
+  dependencies:
+    "@types/react" "*"
+
 "@types/react@*":
   version "17.0.38"
   resolved "https://registry.yarnpkg.com/@types/react/-/react-17.0.38.tgz#f24249fefd89357d5fa71f739a686b8d7c7202bd"
