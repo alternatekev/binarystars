@@ -6,6 +6,7 @@ import { Container } from "semantic-ui-react";
 import { style } from "@styles";
 import { stripHtml } from "string-strip-html";
 import { Flasher } from "@components";
+import ReactTypingEffect from "react-typing-effect";
 
 import { initializeApollo, HOME_QUERY } from "@data";
 
@@ -26,17 +27,24 @@ const styles = style({
     textShadow: "0 -1px 1px rgba(0, 0, 0, 0.25)",
     backgroundAttachment: "fixed",
     color: "#FFF",
-    padding: `3px 6px`,
+    padding: `3px 5px`,
     backgroundColor: "rgba(0, 0, 0, 0.25)",
     boxShadow: `0 10px 25px rgba(0, 0, 0, 0.25)`,
+    " p": {
+      marginBottom: 0,
+      display: "block",
+      paddingLeft: 5,
+    },
   },
   Text: {
-    display: "block",
     letterSpacing: "-0.0555555em",
     " p span": {
       color: "rgba(255, 255, 255, 0.5)",
       textShadow: "0 -1px 1px rgba(0, 0, 0, 0.25)",
     },
+  },
+  cursor: {
+    display: "none",
   },
 });
 
@@ -69,10 +77,16 @@ const BinaryStarsPage = ({ content, featuredImage, title, excerpt }: Props) => (
     />
     <Container>
       <div css={css(styles.Container)}>
-        <div
-          css={css(styles.Text)}
-          dangerouslySetInnerHTML={{ __html: content }}
-        />
+        <p>
+          <ReactTypingEffect
+            typing
+            delay={50}
+            speed={200}
+            eraseDelay={500000}
+            cursorClassName="typing-cursor"
+            text={stripHtml(excerpt).result}
+          />
+        </p>
         <Flasher />
       </div>
     </Container>

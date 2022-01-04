@@ -24,3 +24,7 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.typing-cursor {
+  display: none !important;
+}

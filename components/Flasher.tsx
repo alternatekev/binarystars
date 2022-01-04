@@ -9,6 +9,7 @@ export const Flasher: FC = () => {
       height: 2,
       display: "inline-block",
       marginLeft: 5,
+      marginRight: 5,
       backgroundColor: "rgba(255, 153, 153, 1)",
       transition: "none",
     },
