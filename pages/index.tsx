@@ -79,7 +79,6 @@ const BinaryStarsPage = ({ content, featuredImage, title, excerpt }: Props) => (
       <div css={css(styles.Container)}>
         <p>
           <ReactTypingEffect
-            typing
             delay={50}
             speed={200}
             eraseDelay={500000}
